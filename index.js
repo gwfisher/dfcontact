@@ -11,7 +11,7 @@ app.use(cors());
 var host = process.env.HOST
 
 const client = redis.createClient({
-    host: host,
+    host: '10.43.87.46',
     port: '6379',
 });
 
