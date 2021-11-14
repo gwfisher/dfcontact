@@ -8,8 +8,6 @@ const port = 80;
 app.use(express.json());
 app.use(cors());
 
-var host = process.env.HOST
-
 const client = redis.createClient({
     host: '10.43.87.46',
     port: '6379',
@@ -20,7 +18,7 @@ client.on('error', err => {
 });
 
 app.get('/contact', (req, res) => {
-    
+    res.send("Oh Hai! I'm an API. You must speak to me in JSON")
 });
 
 app.post('/contact', (req, res) => {
