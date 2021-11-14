@@ -1,14 +1,17 @@
 const express = require('express');
 const cors = require('cors');
+const redis = require("redis");
+
 const app = express();
 const port = 80;
 
 app.use(express.json());
 app.use(cors());
 
-const redis = require("redis");
+var host = process.env.HOST
+
 const client = redis.createClient({
-    host: '10.43.87.46',
+    host: host,
     port: '6379',
 });
 
