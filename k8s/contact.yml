@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysite-contact
+  labels:
+    app: mysite-contact
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysite-contact
+  template:
+    metadata:
+      labels:
+        app: mysite-contact
+    spec:
+      containers:
+      - name: mysite-contact-service
+        image: quay.io/gwesfisher/dfcontact:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysite-contact-service
+spec:
+  selector:
+    app: mysite-contact
+  ports:
+  - port: 3000
+    targetPort: 3000
+---
