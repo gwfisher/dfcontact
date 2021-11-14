@@ -18,7 +18,7 @@ app.get('/contact', (req, res) => {
     res.send("Oh. Hai. This is an API. You have to talk to me in JSON");
 });
 
-app.post('/message', (req, res) => {
+app.post('/contact', (req, res) => {
 
    var d = new Date();
    var todayDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
