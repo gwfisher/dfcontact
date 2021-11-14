@@ -14,7 +14,7 @@ client.on('error', err => {
     console.log('Error:' + err);
 });
 
-app.get('/', (req, res) => {
+app.get('/contact', (req, res) => {
     res.send("Oh. Hai. This is an API. You have to talk to me in JSON");
 });
 
