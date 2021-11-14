@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 80;
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 const redis = require("redis");
 const client = redis.createClient({
@@ -13,8 +15,6 @@ const client = redis.createClient({
 client.on('error', err => {
     console.log('Error:' + err);
 });
-
-app.use(cors());
 
 app.get('/contact', (req, res) => {
     
