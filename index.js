@@ -6,7 +6,7 @@ app.use(express.json())
 
 const redis = require("redis");
 const client = redis.createClient({
-    host: '192.168.2.122',
+    host: '10.43.87.46',
     port: '6379',
 });
 
