@@ -14,8 +14,10 @@ client.on('error', err => {
     console.log('Error:' + err);
 });
 
+app.use(cors());
+
 app.get('/contact', (req, res) => {
-    res.send("Oh. Hai. This is an API. You have to talk to me in JSON");
+    
 });
 
 app.post('/contact', (req, res) => {
@@ -35,7 +37,7 @@ app.post('/contact', (req, res) => {
     client.hmset('mid:' + id, {'date': todayDate,'name': name, 'message': message});
    });
 
-
+   res.sendStatus(200);
 
    console.log(currentMessage);
 });
