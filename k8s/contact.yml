@@ -17,6 +17,9 @@ spec:
       containers:
       - name: mysite-contact-service
         image: quay.io/gwesfisher/dfcontact:latest
+        env:
+          - name: REDIS_HOST
+            value: 10.43.87.46
         resources:
           limits:
             memory: "128Mi"

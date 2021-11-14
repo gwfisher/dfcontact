@@ -5,11 +5,13 @@ const redis = require("redis");
 const app = express();
 const port = 80;
 
+host = process.env.REDIS_HOST;
+
 app.use(express.json());
 app.use(cors());
 
 const client = redis.createClient({
-    host: '10.43.87.46',
+    host: host,
     port: '6379',
 });
 
